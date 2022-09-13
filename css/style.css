@@ -1,0 +1,11 @@
+.active {
+  color: red;
+}
+
+.tabs_section {
+  display: none;
+}
+
+.tabs_section.show {
+  display: block;
+}
