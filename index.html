@@ -14,7 +14,7 @@
   </head>
   <body>
     <ul class="nav nav-tabs">
-      <li class="nav-item nav-link" data-tabId="111">Сalculator</li>
+      <li class="nav-item nav-link active" data-tabId="111">Сalculator</li>
       <li class="nav-item nav-link" data-tabId="113">Form</li>
       <li class="nav-item nav-link" data-tabId="187">Test interview</li>
       <li class="nav-item nav-link" data-tabId="155">Tic-Tac-Toe</li>
@@ -23,10 +23,103 @@
     </ul>
 
     <div class="tabs_content">
-      <section class="tabs_section" data-sectionId="111">
+      <section class="tabs_section show" data-sectionId="111">
         <h1>Сalculator</h1>
+
+        <input class="inputSetNum" type="text" value="" />
+        <br /><br />
+        <button class="calk_button">
+          <i class="bi bi-plus-square-fill"></i>
+        </button>
+        <button class="calk_button">
+          <i class="bi bi-dash-square-fill"></i>
+        </button>
+        <button class="calk_button">
+          <i class="bi bi-slash-square-fill"></i>
+        </button>
+        <button class="calk_button"><i class="bi bi-asterisk"></i></button>
+        <br /><br />
+        <input class="inputSetNum" type="text" value="" />
+        <br /><br />
+        <label for="result">result:</label>
+        <br />
+        <input class="inputGetNum" type="text" value="" id="result" />
       </section>
-      <section class="tabs_section" data-sectionId="113"><h1>Form</h1></section>
+
+      <section class="tabs_section" data-sectionId="113">
+        <h1>Form</h1>
+
+        <form action="" id="form">
+          <label for="firstName">Name:</label>
+          <br />
+
+          <input id="firstName" type="text" name="firstName" />
+          <br /><br />
+          <label for="lastName">Last name:</label>
+          <br />
+          <input id="lastName" type="text" name="lastName" />
+          <br /><br />
+          <label for="age">Age:</label>
+          <br />
+          <input id="age" type="text" name="age" />
+          <br /><br />
+          <label for="fhone">Fhone:</label>
+          <br />
+          <input id="fhone" type="text" name="fhone" />
+          <br /><br />
+          <label for="eMail">E-mail:</label>
+          <br />
+          <input id="eMail" type="text" name="eMail" />
+          <br />
+
+          <p>Сontact method</p>
+
+          <label
+            ><input type="radio" name="connectType" />
+            Phone
+          </label>
+          <br />
+          <label
+            ><input type="radio" name="connectType" />
+            E-Mail
+          </label>
+          <br />
+          <label
+            ><input type="radio" name="connectType" />
+            Mail
+          </label>
+          <br /><br />
+
+          <div class="ifMail">
+            <label for="eMail">mail:</label>
+            <input id="Mail" type="text" name="Mail" />
+          </div>
+
+          <p>date of birthday</p>
+          <select name="month" id="">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+          </select>
+          <select name="day" id="">
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+          </select>
+          <br /><br />
+          <label for="pass"> Inter password</label>
+          <input id="pass" name="pass" type="text" />
+          <br />
+          <label for="repeat_pass"> Repeat password</label>
+          <input id="repeat_pass" name="repeat_pass" type="text" />
+          <br /><br />
+          <label for=""><input type="checkBox" />согласен</label>
+          <label for=""><input type="checkBox" checked />show notice</label>
+
+          <input type="submit" value="Creat accaunt" id="submit" />
+        </form>
+      </section>
+
       <section class="tabs_section" data-sectionId="187">
         <h1>Test interview</h1>
       </section>
@@ -41,17 +134,8 @@
       </section>
     </div>
 
-    <input class="inputSetNum" type="text" value="firstNum" />
-    <input class="inputSetNum" type="text" value="firstNum" />
-    <input class="inputSetNum" type="text" value="secondNum" />
-
-    <input class="inputGetNum" type="text" value="resultNum" />
-
-    <button class="calk_button"><i class="bi bi-plus-square-fill"></i></button>
-    <button class="calk_button"><i class="bi bi-dash-square-fill"></i></button>
-    <button class="calk_button"><i class="bi bi-slash-square-fill"></i></button>
-    <button class="calk_button"><i class="bi bi-asterisk"></i></button>
-
-    <script src="js/script.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/form.js"></script>
   </body>
 </html>

@@ -8,24 +8,27 @@ tabsWrapper.addEventListener("click", selectTab);
 
 function selectTab(event) {
   if (this !== event.target) {
-    tabsReset();
+    tabsReset(tabs, sections);
 
     event.target.classList.add("active");
+    checkTabActive(tabs, showSection);
+  }
+}
 
-    for (const tab of tabs) {
-      if (tab.classList.contains("active")) {
-        const tabId = tab.dataset.tabid;
-        showSection(tabId);
-      }
+function checkTabActive(checkTabs, showSectionCB) {
+  for (const tab of checkTabs) {
+    if (tab.classList.contains("active")) {
+      const tabId = tab.dataset.tabid;
+      showSectionCB(tabId);
     }
   }
 }
 
-function tabsReset() {
-  tabs.forEach((tab) => {
+function tabsReset(tabsForReset, sectionsForReset) {
+  tabsForReset.forEach((tab) => {
     tab.classList.remove("active");
   });
-  sections.forEach((section) => {
+  sectionsForReset.forEach((section) => {
     section.classList.remove("show");
   });
 }
