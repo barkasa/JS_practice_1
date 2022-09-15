@@ -35,19 +35,86 @@
 let form = document.querySelector("#form");
 let firstName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
+let age = document.querySelector("#age");
+let phoneNumber = document.querySelector("#fhone");
+let radioInputs = document.querySelectorAll('[name="connectType"]');
+let contactGroup = document.querySelector("#contact_group");
+let mailBox = document.querySelector(".mailBox");
+let mail = document.querySelector("#mail");
 
+console.log(radioInputs);
 form.addEventListener("submit", submitHandler);
+contactGroup.addEventListener("click", chooseContact);
 
 function submitHandler(event) {
   event.preventDefault();
-  chekEmpty(firstName);
-  chekEmpty(lastName);
+  checkEmpty(firstName);
+  checkEmpty(lastName);
+  checkEmpty(age);
+  checkDigit(age);
+  checkLarge(age, 18);
+  checkEmpty(phoneNumber);
+  checkDigit(phoneNumber);
+  let radioActive = checkGroupIsCheked(radioInputs);
+  console.log(radioActive);
+  if (radioActive.value === "mail") {
+    checkEmpty(mail);
+  }
 }
 // вспомогательные функции:
-function chekEmpty(element) {
+function checkEmpty(element) {
   if (!element.value) {
     element.classList.add("error");
+    console.log(`Error, element #${element.id} is empty`);
   } else {
     element.classList.remove("error");
   }
+}
+function checkDigit(element) {
+  if (isNaN(Number(element.value))) {
+    element.classList.add("error");
+    console.log(`Error, element #${element.id} is digit`);
+  } else {
+    element.classList.remove("error");
+  }
+}
+function checkDigit(element) {
+  if (isNaN(Number(element.value))) {
+    element.classList.add("error");
+    console.log(`Error, element #${element.id} is digit`);
+  } else {
+    element.classList.remove("error");
+  }
+}
+
+function checkLarge(element, checkNum) {
+  console.log(Number(element.value));
+
+  if (Number(element.value) < checkNum) {
+    element.classList.add("error");
+    console.log(`Error, element #${element.id} < ${checkNum}`);
+  } else {
+    element.classList.remove("error");
+  }
+}
+
+function chooseContact(event) {
+  if (event.target.name === "connectType") {
+    console.log(event.target);
+  }
+  if (event.target.value === "mail") {
+    mailBox.classList.remove("hidden");
+  } else {
+    mailBox.classList.add("hidden");
+  }
+}
+
+function checkGroupIsCheked(elements) {
+  for (const element of elements) {
+    if (element.checked) {
+      contactGroup.classList.remove("error");
+      return element;
+    }
+  }
+  contactGroup.classList.add("error");
 }
