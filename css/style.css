@@ -13,6 +13,9 @@
 .error {
   border: 1px solid #de3737;
 }
+.error + label {
+  color: #de3737;
+}
 
 .form-control.error {
   display: block;

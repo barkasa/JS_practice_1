@@ -41,26 +41,126 @@ let radioInputs = document.querySelectorAll('[name="connectType"]');
 let contactGroup = document.querySelector("#contact_group");
 let mailBox = document.querySelector(".mailBox");
 let mail = document.querySelector("#mail");
+let email = document.querySelector("#eMail");
+let mounth = document.querySelector("#mounth");
+let day = document.querySelector("#day");
+let inLineCheckboxAgree = document.querySelector("#inLineCheckboxAgree");
+let inLineCheckboxShow = document.querySelector("#inLineCheckboxShow");
+
+let pass = document.querySelector("#inputPassword");
+let repeatPass = document.querySelector("#inputPassword2");
 
 console.log(radioInputs);
 form.addEventListener("submit", submitHandler);
 contactGroup.addEventListener("click", chooseContact);
 
+// firstName.addEventListener("change", changeName);
+// lastName.addEventListener("change", changeName);
+age.addEventListener("change", changeAge);
+
 function submitHandler(event) {
-  event.preventDefault();
-  checkEmpty(firstName);
-  checkEmpty(lastName);
-  checkEmpty(age);
-  checkDigit(age);
-  checkLarge(age, 18);
-  checkEmpty(phoneNumber);
-  checkDigit(phoneNumber);
-  let radioActive = checkGroupIsCheked(radioInputs);
-  console.log(radioActive);
-  if (radioActive.value === "mail") {
-    checkEmpty(mail);
+  event.preventDefault(); // отключаем дефолтные сценарии(submit)
+  if (formValidate()) {
+    showMessage(inLineCheckboxShow, "Account created");
   }
 }
+
+// семанимческие блоки кода:
+
+function changeAge(event) {
+  checkAge(this);
+}
+function changeName(event) {
+  checkName(this);
+}
+
+function checkAge(element) {
+  if (checkEmpty(element)) {
+    if (checkDigit(element)) {
+      return checkLarge(element, 18);
+    }
+  }
+}
+
+function checkDate(element1, element2) {
+  let flag = true; // способ решения через "flag";
+  if (checkEmpty(element1)) {
+    flag = false;
+  }
+  if (checkEmpty(element2)) {
+    flag = false;
+  }
+  return flag;
+}
+
+function checkName(element1, element2) {
+  let flag = true; // способ решения через "flag";
+  if (checkEmpty(element1)) {
+    flag = false;
+  }
+  if (checkEmpty(element2)) {
+    flag = false;
+  }
+  return flag;
+}
+
+function checkPhone(element) {
+  if (checkEmpty(element)) {
+    return checkDigit(element);
+  }
+}
+
+function checkEmail(element) {
+  if (checkEmpty(element)) {
+    return checkIncludes(element, "@");
+  }
+}
+
+function checkPassword(password, duoblepassword) {
+  let flag = true; // способ решения через "flag";
+  if (!checkEmpty(password)) {
+    flag = false;
+  }
+  if (!checkEmpty(duoblepassword)) {
+    flag = false;
+  }
+
+  if (flag) {
+    if (!checkClone(password, duoblepassword)) {
+      flag = false;
+    }
+  }
+
+  return flag;
+}
+
+function formValidate() {
+  let nameValid = checkName(firstName, lastName);
+  let ageValid = checkAge(age);
+  let phoneValid = checkPhone(phoneNumber);
+  let emailValid = checkEmail(email);
+  let passwordValid = checkPassword(pass, repeatPass);
+  let dateValid = checkDate(mounth, day);
+  let checkBoxValid = checkChecked(inLineCheckboxAgree);
+  let radioValid;
+  let radioActive = checkGroupIsCheked(radioInputs, contactGroup);
+  if (radioActive && radioActive.value === "mail") {
+    radioValid = checkEmpty(mail);
+  }
+  if (
+    nameValid &&
+    ageValid &&
+    phoneValid &&
+    emailValid &&
+    passwordValid &&
+    dateValid &&
+    checkBoxValid &&
+    radioValid
+  ) {
+    return true;
+  }
+}
+
 // вспомогательные функции:
 function checkEmpty(element) {
   if (!element.value) {
@@ -68,6 +168,7 @@ function checkEmpty(element) {
     console.log(`Error, element #${element.id} is empty`);
   } else {
     element.classList.remove("error");
+    return true;
   }
 }
 function checkDigit(element) {
@@ -76,6 +177,7 @@ function checkDigit(element) {
     console.log(`Error, element #${element.id} is digit`);
   } else {
     element.classList.remove("error");
+    return true;
   }
 }
 function checkDigit(element) {
@@ -84,37 +186,84 @@ function checkDigit(element) {
     console.log(`Error, element #${element.id} is digit`);
   } else {
     element.classList.remove("error");
+    return true;
   }
 }
 
 function checkLarge(element, checkNum) {
-  console.log(Number(element.value));
+  // console.log(Number(element.value));
 
   if (Number(element.value) < checkNum) {
     element.classList.add("error");
     console.log(`Error, element #${element.id} < ${checkNum}`);
   } else {
     element.classList.remove("error");
+    return true;
   }
 }
 
 function chooseContact(event) {
   if (event.target.name === "connectType") {
-    console.log(event.target);
+    // console.log(event.target);
   }
   if (event.target.value === "mail") {
     mailBox.classList.remove("hidden");
   } else {
     mailBox.classList.add("hidden");
+    return true;
   }
 }
 
-function checkGroupIsCheked(elements) {
+function checkGroupIsCheked(elements, parentElements) {
   for (const element of elements) {
     if (element.checked) {
       contactGroup.classList.remove("error");
+
       return element;
     }
   }
   contactGroup.classList.add("error");
+  console.log(`Error, child elements #${parentElements.id} is not checked`);
+}
+
+function checkIncludes(element, simbol) {
+  if (element.value.includes(simbol)) {
+    element.classList.remove("error");
+    // console.log(element.value);
+    return true;
+  }
+  element.classList.add("error");
+  // console.log(element.value);
+  console.log(`Error, element #${element.id} is not includes ${simbol}`);
+}
+
+function checkClone(password, duoblepassword) {
+  if (password.value === duoblepassword.value) {
+    password.classList.remove("error");
+    duoblepassword.classList.remove("error");
+    return true;
+  }
+  password.classList.add("error");
+
+  duoblepassword.classList.add("error");
+  console.log(
+    `Error, element #${password.id} is not === #${duoblepassword.id}`
+  );
+}
+
+function checkChecked(checkBox) {
+  if (checkBox.checked) {
+    checkBox.classList.remove("error");
+
+    return true;
+  }
+  checkBox.classList.add("error");
+
+  console.log(`Error, element #${checkBox.id} is not checked`);
+}
+
+function showMessage(checkBox, message) {
+  if (checkBox.checked) {
+    alert(message);
+  }
 }

@@ -55,7 +55,7 @@
                 Clear
               </button>
             </div>
-            <br /><br />
+            <br />
             <input
               class="calc_input"
               type="text"
@@ -165,12 +165,17 @@
             </label>
             <br />
             <label
-              ><input type="radio" name="connectType" value="email" />
+              ><input
+                type="radio"
+                name="connectType"
+                value="email"
+                id="email"
+              />
               E-Mail
             </label>
             <br />
             <label
-              ><input type="radio" name="connectType" value="mail" />
+              ><input type="radio" name="connectType" value="mail" id="mail" />
               Mail
             </label>
           </div>
@@ -192,7 +197,8 @@
           </div>
           <br />
           <p>Date of birthday:</p>
-          <select name="month" id="">
+          <select name="month" id="mounth">
+            <option value=""></option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -206,7 +212,8 @@
             <option value="11">November</option>
             <option value="12">December</option>
           </select>
-          <select name="day" id="">
+          <select name="day" id="day">
+            <option value=""></option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -261,7 +268,7 @@
               <input
                 type="password"
                 class="form-control"
-                id="inputPassword"
+                id="inputPassword2"
                 placeholder="Repeat password"
               />
             </div>
@@ -276,28 +283,33 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
+              id="inLineCheckboxAgree"
               value="option1"
             />
-            <label class="form-check-label" for="inlineCheckbox1">Agree</label>
+            <label class="form-check-label" for="inLineCheckboxAgree"
+              >Agree</label
+            >
           </div>
 
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
+              id="inLineCheckboxShow"
               value="option1"
+              checked
             />
-            <label class="form-check-label" for="inlineCheckbox1"
+            <label class="form-check-label" for="inLineCheckboxShow"
               >Show notice</label
             >
           </div>
 
           <!-- <input type="submit" value="Creat accaunt" id="submit" /> -->
-          <button class="btn btn-outline-secondary" type="submit" id="submit">
-            Creat accaunt
-          </button>
+          <div>
+            <button class="btn btn-outline-secondary" type="submit" id="submit">
+              Creat accaunt
+            </button>
+          </div>
         </form>
       </section>
 
