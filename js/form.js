@@ -57,6 +57,10 @@ contactGroup.addEventListener("click", chooseContact);
 // firstName.addEventListener("change", changeName);
 // lastName.addEventListener("change", changeName);
 age.addEventListener("change", changeAge);
+firstName.addEventListener("change", changeName);
+lastName.addEventListener("change", changeName);
+phoneNumber.addEventListener("change", changePhone);
+email.addEventListener("change", changeEmail);
 
 function submitHandler(event) {
   event.preventDefault(); // отключаем дефолтные сценарии(submit)
@@ -72,6 +76,12 @@ function changeAge(event) {
 }
 function changeName(event) {
   checkName(this);
+}
+function changePhone(event) {
+  checkPhone(this);
+}
+function changeEmail(event) {
+  checkEmail(this);
 }
 
 function checkAge(element) {

@@ -16,6 +16,23 @@
 .error + label {
   color: #de3737;
 }
+.calk_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 2rem 0;
+  transform: rotate(45deg);
+}
+.calk_icon img {
+  width: 10rem;
+}
+
+.buttons_group {
+  margin: 2rem 0 2rem 0;
+}
+/* .result_title {
+  margin-top: 2rem;
+} */
 
 .form-control.error {
   display: block;
@@ -42,7 +59,15 @@
 .calk_wrapper {
   margin-top: 2rem;
   padding: 15px 10px 15px 10px;
-  background-color: rgb(139, 151, 158);
+  background: rgb(2, 0, 36);
+  background: rgb(75, 119, 196);
+  background: linear-gradient(
+    -45deg,
+    rgba(75, 119, 196, 1) 0%,
+    rgba(98, 138, 176, 1) 47%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  /* background-color: rgb(139, 151, 158); */
   border-radius: 15px;
   border: 1px solid #000000;
 }

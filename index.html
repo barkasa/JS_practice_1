@@ -37,8 +37,8 @@
               placeholder="num1"
               id="num1"
             />
-            <br /><br />
-            <div id="operator_buttons">
+
+            <div class="buttons_group" id="operator_buttons">
               <button class="btn btn-outline-dark" id="plusButton">
                 <i class="bi bi-plus-lg"></i>
               </button>
@@ -55,17 +55,20 @@
                 Clear
               </button>
             </div>
-            <br />
-            <input
-              class="calc_input"
-              type="text"
-              placeholder="num2"
-              id="num2"
-            />
 
-            <br /><br />
-            <label for="result">Result:</label>
-            <br />
+            <div>
+              <input
+                class="calc_input"
+                type="text"
+                placeholder="num2"
+                id="num2"
+              />
+            </div>
+            <div class="calk_icon">
+              <img src="img/calculator-icon-8175.png" alt="" />
+            </div>
+
+            <div class="result_title"><label for="result">Result:</label></div>
 
             <input class="calc_input" type="text" value="" id="result" />
           </div>
@@ -136,7 +139,7 @@
                 type="fhone"
                 class="form-control"
                 id="fhone"
-                placeholder="Fhone"
+                placeholder=" fhone"
                 name="fhone"
               />
             </div>
@@ -159,27 +162,37 @@
           <p>Сontact method:</p>
 
           <div for="form-group" id="contact_group">
-            <label
-              ><input type="radio" name="connectType" value="phone" />
-              Phone
-            </label>
-            <br />
-            <label
-              ><input
-                type="radio"
-                name="connectType"
-                value="email"
-                id="email"
-              />
-              E-Mail
-            </label>
-            <br />
-            <label
-              ><input type="radio" name="connectType" value="mail" id="mail" />
-              Mail
-            </label>
+            <div>
+              <label class="contact_group"
+                ><input type="radio" name="connectType" value="phone" />
+                Phone
+              </label>
+            </div>
+
+            <div>
+              <label class="contact_group"
+                ><input
+                  type="radio"
+                  name="connectType"
+                  value="email"
+                  id="email"
+                />
+                E-Mail
+              </label>
+            </div>
+
+            <div>
+              <label class="contact_group"
+                ><input
+                  type="radio"
+                  name="connectType"
+                  value="mail"
+                  id="mail"
+                />
+                Mail
+              </label>
+            </div>
           </div>
-          <br />
 
           <!-- <div class="mailBox hidden">
             <label for="eMail">mail:</label>
@@ -258,6 +271,9 @@
                 id="inputPassword"
                 placeholder="Password"
               />
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 8-20 characters long.
+              </small>
             </div>
           </div>
           <!-- <label for="pass"> Inter password</label>
@@ -271,6 +287,9 @@
                 id="inputPassword2"
                 placeholder="Repeat password"
               />
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 8-20 characters long.
+              </small>
             </div>
           </div>
           <!-- <label for="repeat_pass"> Repeat password</label>
