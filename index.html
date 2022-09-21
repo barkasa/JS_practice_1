@@ -330,11 +330,205 @@
             </button>
           </div>
         </form>
+
+        <div class="modal">
+          <!-- 
+1. получить все элементы внутри модального окна
+2. написать функ. showModal (true - показывать, false - скрыть)
+3. приправ. заполнении формы показываем форму, при нажатии на крести - закрываем окно
+4. после showModal (true) заносим текст из инпутов в
+ -->
+        </div>
       </section>
 
       <section class="tabs_section" data-sectionId="187">
+        <!-- 
+  1.заводим переменные,
+  a.кнопка "далее"
+  b.радио кнопки
+  c.родитель кнопок
+  d.массив блоков(массив родителей)
+  2. прослушка событий родителе (wrapper)
+  3.функция "оброботчик событий":
+  используя перебор масивов радио кнопок определим какая кнопка checked и если ни одна из кнопок не checked, сообщим пользователю, что это ошибка.
+
+  или нам нужно сделать кнопку disabled до того момента пока 1 inputs не сhecked.
+
+  4. получаем кнопку checked (в цикле) и проверяем ее в value
+  5.Создать пустой массив для сбора ответов. Перед переходом на следующий вопрос push в ответ пользователя
+
+  6. для перехода на следующий вопрос - data-wrapper атрибут (element.data.wrapper)
+
+  7.для этого инкркментируем его до того момента по он не станет до трех
+  в этот момент мы ему показываем результат в ответах.
+  Если dataset = 3, показать результат
+  8. вывести некоторый результат, вывести блок, сколько вопросов было правильно. html
+
+вспомогательные функции: 
+1. минимум 1 импут в блоке выбран
+2. получить value выбранного импута
+3. функция погенации (скрыть-показать)
+Параметры (текущий блок и мах блок)
+4.
+
+
+ -->
+
         <h1>Test interview</h1>
+
+        <div class="block_question show" id="group_1" data-wrapper="1">
+          <p class="question">1. Что находится между горой и долиной?</p>
+          <div class="test_contact_group" id="test_group">
+            <div>
+              <label class="group_1_1">
+                a. <input type="radio" name="group" value="" id="group_1_1" />
+                Речка.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_1_2">
+                b.
+                <input type="radio" name="group" value="" id="group_1_2" />
+                Хижина.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_1_3">
+                c.
+                <input
+                  type="radio"
+                  name="group"
+                  value="version"
+                  id="group_1_3"
+                />
+                Свой вариант.
+              </label>
+            </div>
+          </div>
+          <br />
+          <!-- --------------------------------- -->
+          <div class="versionInput hidden">
+            <div class="col-sm-10">
+              <input
+                type="version"
+                class="form-control"
+                id="version"
+                placeholder="version"
+              />
+            </div>
+          </div>
+          <br />
+
+          <!-- --------------------------------- -->
+        </div>
+        <br /><br />
+        <div class="block_question" id="group_2" data-wrapper="2">
+          <p class="question">
+            2.Сколько программистов нужно, чтобы закрутить лампочку?
+          </p>
+          <div class="test_contact_group" id="test_group">
+            <div>
+              <label class="group_2_1">
+                a. <input type="radio" name="group" value="" id="group_2_1" />
+                3.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_2_2">
+                b.
+                <input type="radio" name="group" value="" id="group_2_2" />
+                1.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_2_3">
+                c.
+                <input
+                  type="radio"
+                  name="group"
+                  value="version"
+                  id="group_2_3"
+                />
+                Свой вариант.
+              </label>
+            </div>
+          </div>
+          <br />
+          <!-- --------------------------------- -->
+          <div class="versionInput hidden">
+            <div class="col-sm-10">
+              <input
+                type="version"
+                class="form-control"
+                id="version"
+                placeholder="version"
+              />
+            </div>
+          </div>
+
+          <!-- --------------------------------- -->
+        </div>
+        <div class="block_question" id="group_3" data-wrapper="3">
+          <p class="question">3. Чем лошадь отличается от иголки?</p>
+          <div class="test_contact_group" id="test_group">
+            <div>
+              <label class="group_3_1">
+                a. <input type="radio" name="group" value="" id="group_3_1" />
+                Происхождением.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_3_2">
+                b.
+                <input type="radio" name="group" value="" id="group_3_2" />
+                Ничем.
+              </label>
+            </div>
+
+            <div>
+              <label class="group_3_3">
+                c.
+                <input
+                  type="radio"
+                  name="group"
+                  value="version"
+                  id="group_3_3"
+                />
+                Свой вариант.
+              </label>
+            </div>
+          </div>
+          <br />
+          <!-- --------------------------------- -->
+          <div class="versionInput hidden">
+            <div class="col-sm-10">
+              <input
+                type="version"
+                class="form-control"
+                id="version"
+                placeholder="version"
+              />
+            </div>
+          </div>
+
+          <!-- --------------------------------- -->
+        </div>
+        <button class="btn btn-outline-secondary" id="back">back</button>
+        <button class="btn btn-outline-secondary" id="next">next</button>
+
+        <!-- <div class="box show" data-wrapper="1">1</div>
+        <div class="box" data-wrapper="2">2</div>
+        <div class="box" data-wrapper="3">3</div>
+        
+        <button class="next">back</button>
+        <button class="next">next</button> -->
       </section>
+
       <section class="tabs_section" data-sectionId="155">
         <h1>Tic-Tac-Toe</h1>
 
@@ -368,5 +562,6 @@
     <script src="js/calculator.js"></script>
     <script src="js/form.js"></script>
     <script src="js/Tic-Tac-Toe.js"></script>
+    <script src="js/test.js"></script>
   </body>
 </html>

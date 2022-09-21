@@ -34,6 +34,7 @@
 // вывести информацию в блок, чтоб представить в формате презинтаций
 let form = document.querySelector("#form");
 let firstName = document.querySelector("#firstName");
+
 let lastName = document.querySelector("#lastName");
 let age = document.querySelector("#age");
 let phoneNumber = document.querySelector("#fhone");
@@ -57,14 +58,15 @@ contactGroup.addEventListener("click", chooseContact);
 // firstName.addEventListener("change", changeName);
 // lastName.addEventListener("change", changeName);
 age.addEventListener("change", changeAge);
-firstName.addEventListener("change", changeName);
-lastName.addEventListener("change", changeName);
+firstName.addEventListener("change", changeFirstName);
+lastName.addEventListener("change", changelastName);
 phoneNumber.addEventListener("change", changePhone);
 email.addEventListener("change", changeEmail);
 
 function submitHandler(event) {
   event.preventDefault(); // отключаем дефолтные сценарии(submit)
   if (formValidate()) {
+    // showModal(true);
     showMessage(inLineCheckboxShow, "Account created");
   }
 }
@@ -74,8 +76,11 @@ function submitHandler(event) {
 function changeAge(event) {
   checkAge(this);
 }
-function changeName(event) {
-  checkName(this);
+function changeFirstName(event) {
+  checkName(firstName, lastName);
+}
+function changelastName(event) {
+  checkName(firstName, lastName);
 }
 function changePhone(event) {
   checkPhone(this);
@@ -146,13 +151,14 @@ function checkPassword(password, duoblepassword) {
 
 function formValidate() {
   let nameValid = checkName(firstName, lastName);
+
   let ageValid = checkAge(age);
   let phoneValid = checkPhone(phoneNumber);
   let emailValid = checkEmail(email);
   let passwordValid = checkPassword(pass, repeatPass);
   let dateValid = checkDate(mounth, day);
-  let checkBoxValid = checkChecked(inLineCheckboxAgree);
-  let radioValid;
+  let checkBoxValid = checkChecked(inLineCheckboxAgree, inLineCheckboxShow);
+  let radioValid = true;
   let radioActive = checkGroupIsCheked(radioInputs, contactGroup);
   if (radioActive && radioActive.value === "mail") {
     radioValid = checkEmpty(mail);
@@ -274,6 +280,7 @@ function checkChecked(checkBox) {
 
 function showMessage(checkBox, message) {
   if (checkBox.checked) {
+    console.log(checkBox, message);
     alert(message);
   }
 }
