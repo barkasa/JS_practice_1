@@ -81,7 +81,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #e9ecef;
 }
 
 [tabindex="-1"]:focus {
@@ -3009,7 +3009,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #6c757d;
+  color: #c86b0d;
   background-color: transparent;
   background-image: none;
   border-color: #6c757d;

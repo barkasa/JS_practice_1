@@ -74,7 +74,7 @@
           </div>
         </div>
       </section>
-
+      <!-- forma -->
       <section class="tabs_section" data-sectionId="113">
         <h1>Form</h1>
 
@@ -91,14 +91,19 @@
               /> -->
 
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                id="firstName"
-                placeholder="Name"
-              />
-            </div>
+            
+              <label>
+                Ваше имя:
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Name"
+                  required 
+                  
+                />
+              </label>
+            
           </div>
 
           <!-- <label for="lastName">Last name:</label>
@@ -106,70 +111,86 @@
           <input id="lastName" type="text" name="lastName" />
           <br /><br /> -->
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="lastName"
-                class="form-control"
-                id="lastName"
-                placeholder="last Name"
-              />
-            </div>
+            
+              <label>
+                Ваша фамилия:
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="last Name"
+                  required 
+                />
+              </label>
+            
           </div>
           <!-- <label for="age">Age:</label>
           <br />
           <input id="age" type="text" name="age" />
           <br /><br /> -->
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="age"
-                class="form-control"
-                id="age"
-                placeholder="Age"
-              />
-            </div>
+            
+              <label>
+                Возраст:
+                <input
+                  type="number"
+                  class="form-control"
+                  id="age"
+                  placeholder="Age"
+                  required
+                />
+              </label>
+            
           </div>
           <!-- <label for="fhone">Fhone:</label>
           <br />
           <input id="fhone" type="text" name="fhone" />
           <br /><br /> -->
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="fhone"
-                class="form-control"
-                id="fhone"
-                placeholder=" fhone"
-                name="fhone"
-              />
-            </div>
+            
+              <label>
+                Tелефон:
+                <input
+                  type="number"
+                  class="form-control"
+                  id="fhone"
+                  placeholder=" fhone"
+                  name="fhone"
+                  required
+                />
+              </label>
+            
           </div>
           <!-- <label for="eMail">E-mail:</label>
           <br />
           <input id="eMail" type="text" name="eMail" />
           <br /><br /> -->
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="eMail"
-                class="form-control"
-                id="eMail"
-                placeholder="E-mail"
-              />
-            </div>
+            
+              <label>
+                E-Mail:
+                <input
+                  type="email"
+                  class="form-control"
+                  id="eMail"
+                  placeholder="E-mail"
+                  required
+                />
+              </label>
+            
           </div>
 
-          <p>Сontact method:</p>
+          <p class="methodTitle">Сontact method:</p>
 
           <div for="form-group" id="contact_group">
-            <div>
-              <label class="contact_group"
-                ><input type="radio" name="connectType" value="phone" />
+            
+              <label>
+                <input type="radio" name="connectType" value="phone" />
                 Phone
               </label>
-            </div>
+            
 
-            <div>
+            
               <label class="contact_group"
                 ><input
                   type="radio"
@@ -179,9 +200,9 @@
                 />
                 E-Mail
               </label>
-            </div>
+            
 
-            <div>
+            
               <label class="contact_group"
                 ><input
                   type="radio"
@@ -191,106 +212,124 @@
                 />
                 Mail
               </label>
-            </div>
+              
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
 
           <!-- <div class="mailBox hidden">
             <label for="eMail">mail:</label>
             <input id="Mail" type="text" name="Mail" />
           </div> -->
-          <div class="mailBox hidden">
-            <div class="col-sm-10">
-              <input
-                type="Mail"
-                class="form-control"
-                id="Mail"
-                placeholder="Mail"
-              />
-            </div>
-          </div>
-          <br />
-          <p>Date of birthday:</p>
-          <select name="month" id="mounth">
-            <option value=""></option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <select name="day" id="day">
-            <option value=""></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-          </select>
-          <br /><br />
+          
+          <br>
+          <label>
+            <p>Date of birthday:</p>
+            
+              <select name="month" id="mounth">
+                <option value=""></option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select name="day" id="day">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+          </label>
+          
+          <br><br>
           <div class="form-group row">
             <!-- <label for="inputPassword" class="col-sm-2 col-form-label"
               >Password</label
             > -->
-            <div class="col-sm-10">
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword"
-                placeholder="Password"
-              />
+            
+              <label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Password"
+                  required
+                />
+              
               <small id="passwordHelpInline" class="text-muted">
                 Must be 8-20 characters long.
               </small>
-            </div>
+            </label>
+            
           </div>
           <!-- <label for="pass"> Inter password</label>
           <input id="pass" name="pass" type="text" /> -->
 
           <div class="form-group row">
-            <div class="col-sm-10">
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword2"
-                placeholder="Repeat password"
-              />
-              <small id="passwordHelpInline" class="text-muted">
-                Must be 8-20 characters long.
-              </small>
-            </div>
+            
+              <label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword2"
+                  placeholder="Repeat password"
+                  required
+                />
+                <small id="passwordHelpInline" class="text-muted">
+                  Must be 8-20 characters long.
+                </small>
+              </label>
+            
           </div>
           <!-- <label for="repeat_pass"> Repeat password</label>
           <input id="repeat_pass" name="repeat_pass" type="text" /> -->
@@ -299,30 +338,32 @@
           <!-- <label for=""><input type="checkBox" checked />Show notice</label> -->
 
           <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="inLineCheckboxAgree"
-              value="option1"
-            />
-            <label class="form-check-label" for="inLineCheckboxAgree"
-              >Agree</label
-            >
+            <div>
+              
+              <label class="form-check-label" for="inLineCheckboxAgree"
+                ><input
+                class="form-check-input"
+                type="checkbox"
+                id="inLineCheckboxAgree"
+                value="option1"
+              />Agree
+                </label>
+            </div>
+  
+            <div>
+              
+              <label class="form-check-label" for="inLineCheckboxShow"
+                > <input
+                class="form-check-input"
+                type="checkbox"
+                id="inLineCheckboxShow"
+                value="option1"
+                checked
+              />Show notice</label
+              >
+            </div>
           </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="inLineCheckboxShow"
-              value="option1"
-              checked
-            />
-            <label class="form-check-label" for="inLineCheckboxShow"
-              >Show notice</label
-            >
-          </div>
-
+          <br><br>
           <!-- <input type="submit" value="Creat accaunt" id="submit" /> -->
           <div>
             <button class="btn btn-outline-secondary" type="submit" id="submit">
@@ -375,34 +416,30 @@
  -->
 
         <h1>Test interview</h1>
-
+        <br /><br />
         <div class="block_question show" id="group_1" data-wrapper="1">
-          <p class="question">1. Что находится между горой и долиной?</p>
+          <p class="question">1. Ваш опыт с женщинами-программистами.</p>
           <div class="test_contact_group" id="test_group">
             <div>
-              <label class="group_1_1">
-                a. <input type="radio" name="group" value="" id="group_1_1" />
-                Речка.
+              <label class="form-check-label">
+                a.
+                <input type="radio" name="question_1" value="1_1" id="a_1" />
+                Плачевный.
               </label>
             </div>
 
             <div>
-              <label class="group_1_2">
+              <label class="form-check-label">
                 b.
-                <input type="radio" name="group" value="" id="group_1_2" />
-                Хижина.
+                <input type="radio" name="question_1" value="1_2" id="b_2" />
+                Моя жена не програмист.
               </label>
             </div>
 
             <div>
-              <label class="group_1_3">
+              <label class="form-check-label">
                 c.
-                <input
-                  type="radio"
-                  name="group"
-                  value="version"
-                  id="group_1_3"
-                />
+                <input type="radio" name="question_1" value="version_1" id="c_3" />
                 Свой вариант.
               </label>
             </div>
@@ -412,10 +449,13 @@
           <div class="versionInput hidden">
             <div class="col-sm-10">
               <input
-                type="version"
+                type="text"
                 class="form-control"
+                name="question_1"
+                
                 id="version"
-                placeholder="version"
+
+                placeholder="Your version"
               />
             </div>
           </div>
@@ -423,36 +463,31 @@
 
           <!-- --------------------------------- -->
         </div>
-        <br /><br />
+
         <div class="block_question" id="group_2" data-wrapper="2">
           <p class="question">
-            2.Сколько программистов нужно, чтобы закрутить лампочку?
+            2.А есть примеры работ на перфокартах?
           </p>
           <div class="test_contact_group" id="test_group">
             <div>
-              <label class="group_2_1">
-                a. <input type="radio" name="group" value="" id="group_2_1" />
-                3.
+              <label class="form-check-label">
+                a. <input type="radio" name="question_2" value="2_1" id="a_1" />
+                Банат, это ты?.
               </label>
             </div>
 
             <div>
-              <label class="group_2_2">
+              <label class="form-check-label">
                 b.
-                <input type="radio" name="group" value="" id="group_2_2" />
-                1.
+                <input type="radio" name="question_2" value="2_2" id="b_2" />
+                А что это?.
               </label>
             </div>
 
             <div>
-              <label class="group_2_3">
+              <label class="form-check-label">
                 c.
-                <input
-                  type="radio"
-                  name="group"
-                  value="version"
-                  id="group_2_3"
-                />
+                <input type="radio" name="question_2" value="version_2" id="c_3" />
                 Свой вариант.
               </label>
             </div>
@@ -462,10 +497,12 @@
           <div class="versionInput hidden">
             <div class="col-sm-10">
               <input
-                type="version"
+                type="text"
                 class="form-control"
+                name="question_2"
                 id="version"
-                placeholder="version"
+                
+                placeholder="Your version"
               />
             </div>
           </div>
@@ -473,32 +510,29 @@
           <!-- --------------------------------- -->
         </div>
         <div class="block_question" id="group_3" data-wrapper="3">
-          <p class="question">3. Чем лошадь отличается от иголки?</p>
+          <p class="question">
+            3. Вы моете руки перед правкой кода на продакшне?
+          </p>
           <div class="test_contact_group" id="test_group">
             <div>
-              <label class="group_3_1">
-                a. <input type="radio" name="group" value="" id="group_3_1" />
-                Происхождением.
+              <label class="form-check-label">
+                a. <input type="radio" name="question_3" value="3_1" id="a_1" />
+                На что вы намекаете?.
               </label>
             </div>
 
             <div>
-              <label class="group_3_2">
+              <label class="form-check-label">
                 b.
-                <input type="radio" name="group" value="" id="group_3_2" />
-                Ничем.
+                <input type="radio" name="question_3" value="3_2" id="b_2" />
+                Да, конечно.
               </label>
             </div>
 
             <div>
-              <label class="group_3_3">
+              <label class="form-check-label">
                 c.
-                <input
-                  type="radio"
-                  name="group"
-                  value="version"
-                  id="group_3_3"
-                />
+                <input type="radio" name="question_3" value="version_3" id="c_3" />
                 Свой вариант.
               </label>
             </div>
@@ -508,18 +542,33 @@
           <div class="versionInput hidden">
             <div class="col-sm-10">
               <input
-                type="version"
+                type="text"
                 class="form-control"
+                name="question_3"
                 id="version"
-                placeholder="version"
+                
+                placeholder="Your version"
               />
             </div>
           </div>
 
           <!-- --------------------------------- -->
         </div>
-        <button class="btn btn-outline-secondary" id="back">back</button>
-        <button class="btn btn-outline-secondary" id="next">next</button>
+        <button class="btn btn-outline-secondary" type="button" id="back">
+          back
+        </button>
+        <button class="btn btn-outline-secondary" type="button" id="next">
+          next
+        </button>
+
+        <button
+          class="btn-success btn-lg btn-block"
+          type="button"
+          id="apply"
+          onclick="summary();"
+        >
+          result
+        </button>
 
         <!-- <div class="box show" data-wrapper="1">1</div>
         <div class="box" data-wrapper="2">2</div>
@@ -531,24 +580,33 @@
 
       <section class="tabs_section" data-sectionId="155">
         <h1>Tic-Tac-Toe</h1>
+        <br /><br />
 
-        <div class="play">
-          <div class="play_row">
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
+        <div class="content">
+
+          <div class="currentPlayer">
+              <span>Сейчас ходит: <span id="curPlyr">X</span></span>
           </div>
-          <div class="play_row">
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
+  
+          <div id="area"></div>
+  
+          <div class="stat">
+              <table>
+                  <th colspan="2">Статистика</th>
+                  <tr>
+                      <td>X</td>
+                      <td><span id="sX">0</span></td>
+                  </tr>
+                  <tr>
+                      <td>O</td>
+                      <td><span id="sO">0</span></td>
+                  </tr>
+                  <tr>
+                      <td>Ничьи</td>
+                      <td><span id="sD">0</span></td>
+                  </tr>
+              </table>
           </div>
-          <div class="play_row">
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
-            <button class="play_quad"></button>
-          </div>
-        </div>
       </section>
       <section class="tabs_section" data-sectionId="287">
         <h1>Slider</h1>
