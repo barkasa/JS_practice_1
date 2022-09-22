@@ -170,7 +170,7 @@
               <label>
                 E-Mail:
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="eMail"
                   placeholder="E-mail"
@@ -184,40 +184,55 @@
 
           <div for="form-group" id="contact_group">
             
-              <label>
-                <input type="radio" name="connectType" value="phone" />
-                Phone
-              </label>
+            
+                <label>
+                  <input type="radio" name="connectType" value="phone" />
+                  Phone
+                </label>
+              
             
 
             
-              <label class="contact_group"
-                ><input
-                  type="radio"
-                  name="connectType"
-                  value="email"
-                  id="email"
-                />
-                E-Mail
-              </label>
+            
+                <label 
+                  ><input
+                    type="radio"
+                    name="connectType"
+                    value="email"
+                    id="email"
+                  />
+                  E-Mail
+                </label>
+           
             
 
             
-              <label class="contact_group"
-                ><input
-                  type="radio"
-                  name="connectType"
-                  value="mail"
-                  id="mail"
-                />
-                Mail
-              </label>
+          
+                <label 
+                  ><input
+                    type="radio"
+                    name="connectType"
+                    value="mail"
+                    id="mail"
+                  />
+                  Mail
+                </label>
+             
               
             
 
 
 
-
+              <div class="mailBox hidden">
+                <div class="col-sm-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Mail"
+                    placeholder="Mail"
+                  />
+                </div>
+              </div>
 
 
 

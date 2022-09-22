@@ -35,9 +35,9 @@
 let form = document.querySelector("#form");
 let firstName = document.querySelector("#firstName");
 
-let submit = document.getElementById("#submit");
+// let submit = document.getElementById("#submit");
 
-submit.addEventListener("submit", handleFormSubmit);
+// submit.addEventListener("submit", handleFormSubmit);
 
 let lastName = document.querySelector("#lastName");
 let age = document.querySelector("#age");
@@ -67,7 +67,7 @@ lastName.addEventListener("change", changelastName);
 phoneNumber.addEventListener("change", changePhone);
 email.addEventListener("change", changeEmail);
 
-handleFormSubmit(submit);
+// handleFormSubmit(submit);
 
 function submitHandler(event) {
   event.preventDefault(); // отключаем дефолтные сценарии(submit)
@@ -291,8 +291,8 @@ function showMessage(checkBox, message) {
   }
 }
 
-function handleFormSubmit(event) {
-  // Просим форму не отправлять данные самостоятельно
-  event.preventDefault();
-  console.log("Отправка!");
-}
+// function handleFormSubmit(event) {
+//   // Просим форму не отправлять данные самостоятельно
+//   event.preventDefault();
+//   console.log("Отправка!");
+// }
